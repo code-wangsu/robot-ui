@@ -1,0 +1,166 @@
+.rb-datetime-picker {
+  width: 100%;
+
+  /* —— 底部滚轮（date / datetime） —— */
+  &__panel {
+    background: var(--rb-color-white);
+    border-radius: $rb-radius-lg $rb-radius-lg 0 0;
+    overflow: hidden;
+  }
+
+  &__toolbar {
+    @include rb-flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 88rpx;
+    padding: 0 32rpx;
+    @include rb-hairline-bottom;
+  }
+
+  &__title {
+    color: var(--rb-text-color-primary);
+    font-size: 30rpx;
+    font-weight: 700;
+  }
+
+  &__cancel {
+    color: var(--rb-text-color-secondary);
+    font-size: $rb-font-md;
+  }
+
+  &__confirm {
+    color: var(--rb-color-primary);
+    font-size: $rb-font-md;
+  }
+
+  &__picker,
+  &__view {
+    height: 440rpx;
+    padding: 0 0 24rpx;
+  }
+
+  &__item {
+    @include rb-flex-center;
+    height: 72rpx;
+    font-size: $rb-font-md;
+    color: var(--rb-text-color-primary);
+  }
+
+  /* —— 居中时间弹窗（mode=time） —— */
+  &--dialog {
+    @include rb-flex-center;
+    width: 100%;
+  }
+
+  &__dialog {
+    position: relative;
+    width: 640rpx;
+    max-width: 90vw;
+    background: var(--rb-color-white);
+    border-radius: 16rpx;
+    overflow: hidden;
+    box-shadow: 0 16rpx 48rpx rgba(18, 53, 90, 0.18);
+  }
+
+  &__header {
+    @include rb-flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28rpx 28rpx 12rpx;
+  }
+
+  &__close {
+    @include rb-flex-center;
+    width: 48rpx;
+    height: 48rpx;
+  }
+
+  &__close-text {
+    font-size: 40rpx;
+    line-height: 1;
+    color: var(--rb-text-color-secondary);
+  }
+
+  &__summary {
+    padding: 8rpx 28rpx 20rpx;
+  }
+
+  &__summary-text {
+    font-size: 40rpx;
+    font-weight: 700;
+    color: var(--rb-color-primary);
+  }
+
+  &__columns {
+    @include rb-flex;
+    gap: 16rpx;
+    padding: 0 24rpx 8rpx;
+    height: 360rpx;
+  }
+
+  &__column {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__column-label {
+    margin-bottom: 12rpx;
+    font-size: $rb-font-sm;
+    color: var(--rb-text-color-secondary);
+    text-align: center;
+  }
+
+  &__list {
+    flex: 1;
+    height: 0;
+  }
+
+  &__chip {
+    @include rb-flex-center;
+    height: 72rpx;
+    margin-bottom: 8rpx;
+    border-radius: $rb-radius-md;
+    background: var(--rb-bg-color);
+
+    &--active {
+      background: var(--rb-color-primary-light);
+    }
+  }
+
+  &__chip-text {
+    font-size: $rb-font-md;
+    color: var(--rb-text-color-primary);
+
+    &--active {
+      color: var(--rb-color-primary);
+      font-weight: 600;
+    }
+  }
+
+  &__footer {
+    @include rb-flex;
+    gap: 16rpx;
+    padding: 20rpx 24rpx 28rpx;
+  }
+
+  &__btn {
+    @include rb-flex-center;
+    flex: 1;
+    height: 80rpx;
+    border-radius: $rb-radius-md;
+    font-size: $rb-font-md;
+
+    &--cancel {
+      background: var(--rb-bg-color);
+      color: var(--rb-text-color-primary);
+    }
+
+    &--confirm {
+      background: var(--rb-color-primary);
+      color: var(--rb-color-white);
+      font-weight: 600;
+    }
+  }
+}

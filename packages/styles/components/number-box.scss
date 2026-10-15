@@ -1,0 +1,26 @@
+.rb-number-box {
+  @include rb-flex;
+  align-items: center;
+
+  &__minus,
+  &__plus {
+    @include rb-flex-center;
+    background: var(--rb-bg-color);
+    color: var(--rb-text-color-primary);
+    font-size: 36rpx;
+    border-radius: $rb-radius-sm;
+  }
+
+  &__input {
+    margin: 0 8rpx;
+    text-align: center;
+    background: var(--rb-bg-color);
+    color: var(--rb-text-color-primary);
+    font-size: $rb-font-md;
+    border-radius: $rb-radius-sm;
+  }
+
+  &--disabled {
+    opacity: 0.5;
+  }
+}

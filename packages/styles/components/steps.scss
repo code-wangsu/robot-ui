@@ -1,0 +1,58 @@
+.rb-steps {
+  @include rb-flex;
+
+  &--column {
+    flex-direction: column;
+  }
+
+  &--row {
+    flex-direction: row;
+  }
+}
+
+.rb-steps-item {
+  @include rb-flex;
+  flex: 1;
+  align-items: flex-start;
+
+  &--finish &__icon {
+    background: var(--rb-color-primary);
+    color: var(--rb-color-white);
+  }
+
+  &--process &__icon {
+    border: 2rpx solid var(--rb-color-primary);
+    color: var(--rb-color-primary);
+  }
+
+  &--wait &__icon {
+    background: var(--rb-bg-color);
+    color: var(--rb-text-color-secondary);
+  }
+
+  &__icon {
+    @include rb-flex-center;
+    width: 44rpx;
+    height: 44rpx;
+    border-radius: 50%;
+    font-size: $rb-font-sm;
+    flex-shrink: 0;
+  }
+
+  &__content {
+    margin-left: 16rpx;
+    padding-bottom: 32rpx;
+  }
+
+  &__title {
+    font-size: $rb-font-md;
+    color: var(--rb-text-color-primary);
+  }
+
+  &__desc {
+    display: block;
+    margin-top: 8rpx;
+    font-size: $rb-font-sm;
+    color: var(--rb-text-color-secondary);
+  }
+}

@@ -1,0 +1,11 @@
+packages:
+  - 'packages/*'
+  - 'apps/*'
+
+onlyBuiltDependencies:
+  - esbuild
+  - '@parcel/watcher'
+  - '@uni-helper/unocss-preset-uni'
+  - core-js
+  - bufferutil
+  - minidev

@@ -1,0 +1,38 @@
+.rb-layout {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  background: var(--rb-bg-color);
+
+  &--vertical {
+    flex-direction: column;
+  }
+
+  &--horizontal {
+    flex-direction: row;
+  }
+
+  &__header,
+  &__footer {
+    flex-shrink: 0;
+    background: var(--rb-color-white);
+  }
+
+  &__aside {
+    flex-shrink: 0;
+    width: 200rpx;
+    background: var(--rb-color-white);
+  }
+
+  &__main {
+    flex: 1;
+    min-width: 0;
+    min-height: 0;
+    overflow: auto;
+  }
+
+  &--horizontal &__main {
+    display: flex;
+    flex-direction: column;
+  }
+}

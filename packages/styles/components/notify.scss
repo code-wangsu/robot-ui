@@ -1,0 +1,39 @@
+.rb-notify {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: $rb-z-index-toast;
+
+  &--safe-top {
+    padding-top: constant(safe-area-inset-top);
+    padding-top: env(safe-area-inset-top);
+  }
+
+  &__content {
+    padding: 24rpx 32rpx;
+    font-size: $rb-font-md;
+    color: var(--rb-color-white);
+    text-align: center;
+  }
+
+  &--primary &__content {
+    background: var(--rb-color-primary);
+  }
+
+  &--success &__content {
+    background: var(--rb-color-success);
+  }
+
+  &--warning &__content {
+    background: var(--rb-color-warning);
+  }
+
+  &--error &__content {
+    background: var(--rb-color-error);
+  }
+
+  &--info &__content {
+    background: var(--rb-color-info);
+  }
+}

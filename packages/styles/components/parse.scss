@@ -1,0 +1,16 @@
+.rb-parse {
+  font-size: $rb-font-md;
+  color: var(--rb-text-color-regular);
+  line-height: 1.6;
+  word-break: break-all;
+
+  img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+  }
+
+  a {
+    color: var(--rb-color-primary);
+  }
+}

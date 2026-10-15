@@ -1,0 +1,150 @@
+.rb-upload {
+  @include rb-flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 16rpx;
+
+  &__list {
+    @include rb-flex;
+    flex-wrap: wrap;
+    gap: 16rpx;
+  }
+
+  &__item,
+  &__trigger {
+    position: relative;
+    border-radius: $rb-radius-md;
+    overflow: hidden;
+  }
+
+  &__item--picture-card,
+  &--picture-card &__item {
+    background: var(--rb-bg-color);
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  &__status {
+    @include rb-flex-center;
+    flex-direction: column;
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    gap: 8rpx;
+  }
+
+  &__status--fail {
+    background: rgba(245, 108, 108, 0.75);
+  }
+
+  &__status-text,
+  &__percent {
+    color: var(--rb-color-white);
+    font-size: $rb-font-xs;
+  }
+
+  &__spinner {
+    width: 36rpx;
+    height: 36rpx;
+    border: 4rpx solid rgba(255, 255, 255, 0.35);
+    border-top-color: var(--rb-color-white);
+    border-radius: 50%;
+    animation: rb-loading-rotate 0.8s linear infinite;
+  }
+
+  &__delete {
+    @include rb-flex-center;
+    position: absolute;
+    top: 8rpx;
+    right: 8rpx;
+    z-index: 2;
+    width: 36rpx;
+    height: 36rpx;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.55);
+    color: var(--rb-color-white);
+    font-size: 28rpx;
+    line-height: 1;
+  }
+
+  &__text-row {
+    @include rb-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16rpx;
+    min-width: 420rpx;
+    padding: 16rpx 48rpx 16rpx 20rpx;
+    border-radius: $rb-radius-md;
+    background: var(--rb-bg-color);
+  }
+
+  &__name {
+    flex: 1;
+    color: var(--rb-text-color-regular);
+    font-size: $rb-font-sm;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__state {
+    color: var(--rb-text-color-secondary);
+    font-size: $rb-font-xs;
+
+    &--success {
+      color: var(--rb-color-success);
+    }
+
+    &--fail {
+      color: var(--rb-color-error);
+    }
+
+    &--uploading {
+      color: var(--rb-color-primary);
+    }
+  }
+
+  &__trigger {
+    @include rb-flex-center;
+    flex-direction: column;
+    border: 1px dashed var(--rb-border-color);
+    background: var(--rb-bg-color);
+
+    &--card {
+      min-width: 160rpx;
+      min-height: 160rpx;
+    }
+  }
+
+  &--text &__trigger {
+    flex-direction: row;
+    gap: 8rpx;
+    padding: 16rpx 28rpx;
+    min-height: auto;
+  }
+
+  &__plus {
+    color: var(--rb-text-color-secondary);
+    font-size: 48rpx;
+    line-height: 1;
+  }
+
+  &__tip {
+    margin-top: 8rpx;
+    color: var(--rb-text-color-secondary);
+    font-size: $rb-font-xs;
+  }
+
+  &--text &__tip {
+    margin-top: 0;
+  }
+
+  &--disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}

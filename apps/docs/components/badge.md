@@ -1,0 +1,48 @@
+<script setup lang="ts">
+import BasicDemo from '../examples/badge/basic.vue'
+
+const basicSource = `<template>
+<rb-badge :value="12">
+  <rb-button text="消息" />
+</rb-badge>
+<\/template>
+`
+</script>
+
+# Badge 徽标
+
+## 基础用法
+
+<DemoBlock title="基础用法" :raw-source="basicSource">
+  <BasicDemo />
+  <template #code>
+
+```vue
+<template>
+<rb-badge :value="12">
+  <rb-button text="消息" />
+</rb-badge>
+</template>
+```
+
+  </template>
+</DemoBlock>
+
+
+## Attributes
+
+| 属性 | 说明 | 类型 | 默认值 |
+|------|------|------|--------|
+| value | value | `string | number` | '' |
+| max | max | `number` | 99 |
+| isDot | isDot | `boolean` | false |
+| showZero | showZero | `boolean` | false |
+| type | type | `RbType` | 'error' |
+| offset | offset | `[number, number]` | [0, 0] |
+| absolute | absolute | `boolean` | true |
+| customStyle | 自定义样式 | `string / object` | — |
+| customClass | 自定义类名 | `string` | — |
+
+## 在 Playground 中试用
+
+打开 `apps/playground`，在首页进入对应分类页，点击 **Badge** 测试按钮即可验证。

@@ -1,0 +1,37 @@
+.rb-divider {
+  @include rb-flex;
+  align-items: center;
+  margin: 24rpx 0;
+  color: var(--rb-text-color-secondary);
+  font-size: $rb-font-sm;
+
+  &::before,
+  &::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rb-border-color);
+    transform: scaleY(0.5);
+  }
+
+  &--dashed {
+    &::before,
+    &::after {
+      border-top: 1px dashed var(--rb-border-color);
+      background: none;
+      height: 0;
+    }
+  }
+
+  &__text {
+    padding: 0 24rpx;
+  }
+
+  &--content-left &__text {
+    padding-left: 0;
+  }
+
+  &--content-right &__text {
+    padding-right: 0;
+  }
+}

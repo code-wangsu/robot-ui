@@ -1,0 +1,24 @@
+.rb-line-progress {
+  @include rb-flex;
+  align-items: center;
+
+  &__track {
+    flex: 1;
+    background: var(--rb-bg-color);
+    border-radius: 999rpx;
+    overflow: hidden;
+  }
+
+  &__bar {
+    height: 100%;
+    background: var(--rb-color-primary);
+    border-radius: 999rpx;
+    transition: width 0.3s;
+  }
+
+  &__text {
+    margin-left: 16rpx;
+    font-size: $rb-font-sm;
+    color: var(--rb-text-color-regular);
+  }
+}

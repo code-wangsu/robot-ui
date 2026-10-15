@@ -1,0 +1,39 @@
+.rb-textarea {
+  position: relative;
+  box-sizing: border-box;
+  padding: 20rpx 24rpx;
+  background: var(--rb-color-white);
+
+  &--surround {
+    border: 1px solid var(--rb-border-color);
+    border-radius: $rb-radius-md;
+  }
+
+  &--bottom {
+    border-bottom: 1px solid var(--rb-border-color);
+  }
+
+  &--focus.rb-textarea--surround {
+    border-color: var(--rb-color-primary);
+  }
+
+  &--disabled {
+    opacity: 0.6;
+    background: var(--rb-bg-color);
+  }
+
+  &__inner {
+    width: 100%;
+    color: var(--rb-text-color-primary);
+    font-size: $rb-font-md;
+    line-height: 1.5;
+  }
+
+  &__count {
+    display: block;
+    margin-top: 8rpx;
+    text-align: right;
+    color: var(--rb-text-color-secondary);
+    font-size: $rb-font-xs;
+  }
+}

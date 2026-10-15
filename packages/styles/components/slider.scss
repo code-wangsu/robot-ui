@@ -1,0 +1,11 @@
+.rb-slider {
+  padding: 16rpx 0;
+
+  &__native {
+    width: 100%;
+  }
+
+  &--disabled {
+    opacity: 0.5;
+  }
+}

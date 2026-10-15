@@ -1,0 +1,134 @@
+.rb-collapse {
+  background: var(--rb-color-white);
+  overflow: hidden;
+
+  &--border {
+    border-top: 1px solid var(--rb-border-color);
+    border-bottom: 1px solid var(--rb-border-color);
+  }
+}
+
+.rb-collapse-item {
+  &--border {
+    @include rb-hairline-bottom;
+
+    &:last-child::after {
+      display: none;
+    }
+  }
+
+  &--disabled {
+    .rb-collapse-item__title {
+      color: var(--rb-disabled-color);
+    }
+
+    .rb-collapse-item__arrow,
+    .rb-collapse-item__value,
+    .rb-collapse-item__label {
+      color: var(--rb-disabled-color);
+    }
+  }
+
+  &--expanded {
+    .rb-collapse-item__title-text {
+      color: var(--rb-color-primary);
+    }
+
+    .rb-collapse-item__arrow {
+      color: var(--rb-color-primary);
+    }
+  }
+
+  &__title {
+    @include rb-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16rpx;
+    padding: 24rpx 32rpx;
+    font-size: $rb-font-md;
+    color: var(--rb-text-color-primary);
+    box-sizing: border-box;
+
+    &--disabled {
+      pointer-events: none;
+    }
+  }
+
+  &__title-left {
+    @include rb-flex;
+    align-items: center;
+    flex: 1;
+    min-width: 0;
+    gap: 12rpx;
+  }
+
+  &__title-main {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__title-text {
+    line-height: 1.4;
+    @include rb-ellipsis;
+    transition: color 0.2s ease;
+  }
+
+  &__label {
+    margin-top: 8rpx;
+    font-size: $rb-font-xs;
+    color: var(--rb-text-color-secondary);
+    line-height: 1.4;
+  }
+
+  &__icon {
+    @include rb-flex-center;
+    flex-shrink: 0;
+  }
+
+  &__title-right {
+    @include rb-flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 8rpx;
+  }
+
+  &__value {
+    font-size: $rb-font-sm;
+    color: var(--rb-text-color-secondary);
+    max-width: 240rpx;
+    @include rb-ellipsis;
+  }
+
+  &__arrow-wrap {
+    @include rb-flex-center;
+    flex-shrink: 0;
+    width: 32rpx;
+    height: 32rpx;
+  }
+
+  &__arrow {
+    color: var(--rb-text-color-placeholder);
+    line-height: 1;
+    transform: rotate(0deg);
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s ease;
+    display: inline-flex;
+
+    &--expanded {
+      transform: rotate(90deg);
+    }
+  }
+
+  &__wrapper {
+    overflow: hidden;
+    height: 0;
+    transition-property: height;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &__content {
+    padding: 0 32rpx 24rpx;
+    font-size: $rb-font-sm;
+    color: var(--rb-text-color-regular);
+    line-height: 1.6;
+  }
+}

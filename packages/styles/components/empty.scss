@@ -1,0 +1,82 @@
+.rb-empty {
+  @include rb-flex-center;
+  flex-direction: column;
+  width: 100%;
+  padding: 64rpx 40rpx;
+  box-sizing: border-box;
+  text-align: center;
+
+  &__media {
+    @include rb-flex-center;
+    margin-bottom: 20rpx;
+  }
+
+  &__image {
+    display: block;
+    width: 280rpx;
+    height: 220rpx;
+    object-fit: contain;
+  }
+
+  &__glyph {
+    width: 160rpx;
+    height: 160rpx;
+    border-radius: 50%;
+    background: var(--rb-bg-color, #f5f7fa);
+    @include rb-flex-center;
+    color: var(--rb-text-color-placeholder, #c0c4cc);
+    font-size: 56rpx;
+  }
+
+  &__text {
+    max-width: 520rpx;
+    color: var(--rb-text-color-regular, #606266);
+    font-size: 28rpx;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  &__description {
+    max-width: 520rpx;
+    margin-top: 8rpx;
+    color: var(--rb-text-color-placeholder, #909399);
+    font-size: 24rpx;
+    line-height: 1.5;
+  }
+
+  &__extra {
+    margin-top: 28rpx;
+  }
+
+  &--compact {
+    min-height: 160rpx;
+    padding: 24rpx 16rpx;
+
+    .rb-empty__media {
+      margin-bottom: 12rpx;
+    }
+
+    .rb-empty__image {
+      width: 160rpx;
+      height: 126rpx;
+    }
+
+    .rb-empty__glyph {
+      width: 96rpx;
+      height: 96rpx;
+      font-size: 36rpx;
+    }
+
+    .rb-empty__text {
+      font-size: 24rpx;
+    }
+
+    .rb-empty__description {
+      font-size: 22rpx;
+    }
+
+    .rb-empty__extra {
+      margin-top: 16rpx;
+    }
+  }
+}

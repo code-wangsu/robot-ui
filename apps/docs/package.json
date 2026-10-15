@@ -1,0 +1,21 @@
+{
+  "name": "@robot-ui/docs",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "robot-ui 静态文档站",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview",
+    "gen:demos": "node scripts/generate-demo-docs.mjs"
+  },
+  "devDependencies": {
+    "@robot-ui/assets": "workspace:*",
+    "@robot-ui/icons": "workspace:*",
+    "@robot-ui/utils": "workspace:*",
+    "sass": "^1.85.1",
+    "vitepress": "^1.6.3",
+    "vue": "^3.5.13"
+  }
+}

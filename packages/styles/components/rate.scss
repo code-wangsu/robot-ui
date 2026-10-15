@@ -1,0 +1,17 @@
+.rb-rate {
+  @include rb-flex;
+  gap: 8rpx;
+
+  &__star {
+    color: var(--rb-text-color-placeholder);
+    line-height: 1;
+  }
+
+  &__star--active {
+    color: var(--rb-color-warning);
+  }
+
+  &--disabled {
+    opacity: 0.5;
+  }
+}

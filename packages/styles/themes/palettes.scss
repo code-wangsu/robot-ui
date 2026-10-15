@@ -1,0 +1,131 @@
+@use 'sass:map';
+@import './functions.scss';
+
+// 内置主题色板（对齐 Element Plus：主色驱动，衍生色由 Sass mix 生成）
+
+/// 主题元信息：key / 中文名 / 主色
+/// 可在业务侧覆盖 `$rb-theme-presets` 后重新导入
+$rb-theme-presets: (
+  'tech-blue': (
+    label: '科技蓝',
+    primary: #3c9cff,
+  ),
+  'guowang-green': (
+    label: '国网绿',
+    primary: #00a057,
+  ),
+  'business-gray': (
+    label: '商务灰',
+    primary: #5b6b7c,
+  ),
+  'business-orange': (
+    label: '商业橙',
+    primary: #ff6a00,
+  ),
+  'fresh-green': (
+    label: '清新绿',
+    primary: #2ecc71,
+  ),
+  'cool-purple': (
+    label: '炫酷紫',
+    primary: #7c4dff,
+  ),
+  'alert-red': (
+    label: '醒目红',
+    primary: #e53935,
+  ),
+  'mourning-white': (
+    label: '默哀白',
+    primary: #8c8c8c,
+  ),
+  'leaf-cyan': (
+    label: '树叶青',
+    primary: #1abc9c,
+  ),
+  'girl-pink': (
+    label: '少女粉',
+    primary: #ff6b9d,
+  ),
+  'sky-blue': (
+    label: '蓝天浅蓝',
+    primary: #64b5f6,
+  ),
+) !default;
+
+/// 默认主题 key（科技蓝）
+$rb-default-theme: 'tech-blue' !default;
+
+/// 辅助色（各主题共用，也可按主题覆盖）
+$rb-tone-success: #5ac725 !default;
+$rb-tone-warning: #f9ae3d !default;
+$rb-tone-error: #f56c6c !default;
+$rb-tone-info: #909399 !default;
+
+@mixin rb-emit-color-vars($primary, $success: $rb-tone-success, $warning: $rb-tone-warning, $error: $rb-tone-error, $info: $rb-tone-info) {
+  $p: rb-build-tone($primary);
+  $s: rb-build-tone($success);
+  $w: rb-build-tone($warning);
+  $e: rb-build-tone($error);
+  $i: rb-build-tone($info);
+
+  --rb-color-primary: #{map.get($p, base)};
+  --rb-color-primary-dark: #{map.get($p, dark)};
+  --rb-color-primary-light: #{map.get($p, light)};
+  --rb-color-primary-disabled: #{map.get($p, disabled)};
+  --rb-color-primary-light-3: #{rb-mix-light($primary, 3)};
+  --rb-color-primary-light-5: #{rb-mix-light($primary, 5)};
+
+  --rb-color-success: #{map.get($s, base)};
+  --rb-color-success-dark: #{map.get($s, dark)};
+  --rb-color-success-light: #{map.get($s, light)};
+  --rb-color-success-disabled: #{map.get($s, disabled)};
+  --rb-color-success-light-3: #{rb-mix-light($success, 3)};
+  --rb-color-success-light-5: #{rb-mix-light($success, 5)};
+
+  --rb-color-warning: #{map.get($w, base)};
+  --rb-color-warning-dark: #{map.get($w, dark)};
+  --rb-color-warning-light: #{map.get($w, light)};
+  --rb-color-warning-disabled: #{map.get($w, disabled)};
+  --rb-color-warning-light-3: #{rb-mix-light($warning, 3)};
+  --rb-color-warning-light-5: #{rb-mix-light($warning, 5)};
+
+  --rb-color-error: #{map.get($e, base)};
+  --rb-color-error-dark: #{map.get($e, dark)};
+  --rb-color-error-light: #{map.get($e, light)};
+  --rb-color-error-disabled: #{map.get($e, disabled)};
+  --rb-color-error-light-3: #{rb-mix-light($error, 3)};
+  --rb-color-error-light-5: #{rb-mix-light($error, 5)};
+
+  --rb-color-info: #{map.get($i, base)};
+  --rb-color-info-dark: #{map.get($i, dark)};
+  --rb-color-info-light: #{map.get($i, light)};
+  --rb-color-info-disabled: #{map.get($i, disabled)};
+  --rb-color-info-light-3: #{rb-mix-light($info, 3)};
+  --rb-color-info-light-5: #{rb-mix-light($info, 5)};
+}
+
+@mixin rb-emit-base-vars(
+  $main: #303133,
+  $content: #606266,
+  $tips: #909193,
+  $light: #c0c4cc,
+  $border: #dadbde,
+  $bg: #f3f4f6,
+  $disabled: #c8c9cc,
+  $white: #ffffff
+) {
+  --rb-color-white: #{$white};
+  --rb-text-color-primary: #{$main};
+  --rb-text-color-regular: #{$content};
+  --rb-text-color-secondary: #{$tips};
+  --rb-text-color-placeholder: #{$light};
+  --rb-border-color: #{$border};
+  --rb-bg-color: #{$bg};
+  --rb-disabled-color: #{$disabled};
+
+  // 兼容旧命名
+  --rb-main-color: var(--rb-text-color-primary);
+  --rb-content-color: var(--rb-text-color-regular);
+  --rb-tips-color: var(--rb-text-color-secondary);
+  --rb-light-color: var(--rb-text-color-placeholder);
+}

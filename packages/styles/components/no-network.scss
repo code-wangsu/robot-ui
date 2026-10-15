@@ -1,0 +1,16 @@
+.rb-no-network {
+  @include rb-flex-center;
+  flex-direction: column;
+  padding: 80rpx 40rpx;
+
+  &__icon {
+    font-size: 80rpx;
+    margin-bottom: 24rpx;
+  }
+
+  &__text {
+    margin-bottom: 32rpx;
+    font-size: $rb-font-md;
+    color: var(--rb-text-color-secondary);
+  }
+}

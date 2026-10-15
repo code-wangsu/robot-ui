@@ -1,0 +1,38 @@
+.rb-navbar {
+  @include rb-flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  background: var(--rb-color-white);
+  box-sizing: border-box;
+
+  &--fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+  }
+
+  &--safe-top {
+    padding-top: constant(safe-area-inset-top);
+    padding-top: env(safe-area-inset-top);
+  }
+
+  &__left,
+  &__right {
+    @include rb-flex-center;
+    min-width: 120rpx;
+    padding: 0 24rpx;
+    font-size: $rb-font-md;
+    color: var(--rb-color-primary);
+  }
+
+  &__title {
+    flex: 1;
+    text-align: center;
+    font-size: $rb-font-lg;
+    color: var(--rb-text-color-primary);
+    @include rb-ellipsis;
+  }
+}

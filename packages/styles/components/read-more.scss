@@ -1,0 +1,26 @@
+.rb-read-more {
+  position: relative;
+
+  &__content {
+    font-size: $rb-font-md;
+    color: var(--rb-text-color-regular);
+    line-height: 1.6;
+  }
+
+  &__probe {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  &__toggle {
+    display: block;
+    margin-top: 16rpx;
+    font-size: $rb-font-sm;
+    color: var(--rb-color-primary);
+  }
+}

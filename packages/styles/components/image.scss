@@ -1,0 +1,41 @@
+.rb-image {
+  position: relative;
+  overflow: hidden;
+  background: var(--rb-bg-color);
+
+  &--preview {
+    cursor: pointer;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  &__loading,
+  &__error {
+    @include rb-flex-center;
+    position: absolute;
+    inset: 0;
+    background: var(--rb-bg-color);
+  }
+
+  &__spinner {
+    width: 40rpx;
+    height: 40rpx;
+    border: 4rpx solid var(--rb-color-primary-light);
+    border-top-color: var(--rb-color-primary);
+    border-radius: 50%;
+    animation: rb-loading-rotate 0.8s linear infinite;
+  }
+
+  &__error-text {
+    color: var(--rb-text-color-secondary);
+    font-size: $rb-font-sm;
+  }
+
+  &__mask {
+    pointer-events: none;
+  }
+}

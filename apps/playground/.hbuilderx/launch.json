@@ -1,0 +1,35 @@
+{
+  "version": "1.0",
+  "configurations": [
+    {
+      "playground": "standard",
+      "type": "uni-app:app-android"
+    },
+    {
+      "playground": "standard",
+      "type": "uni-app:app-ios"
+    },
+    {
+      "playground": "standard",
+      "type": "uni-app:app-harmony"
+    },
+    {
+      "type": "uni-app:h5"
+    },
+    {
+      "type": "uni-app:mp-weixin"
+    },
+    {
+      "type": "uni-app:mp-alipay"
+    },
+    {
+      "type": "uni-app:mp-baidu"
+    },
+    {
+      "type": "uni-app:mp-toutiao"
+    },
+    {
+      "type": "uni-app:mp-qq"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+.rb-calendar {
+  background: var(--rb-color-white);
+  border-radius: $rb-radius-lg;
+  overflow: hidden;
+
+  &-header {
+    @include rb-flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24rpx 32rpx;
+
+    &__title {
+      color: var(--rb-text-color-primary);
+      font-size: $rb-font-lg;
+      font-weight: 600;
+    }
+
+    &__arrow {
+      @include rb-flex-center;
+      width: 56rpx;
+      height: 56rpx;
+      color: var(--rb-text-color-regular);
+      font-size: 40rpx;
+    }
+  }
+
+  &-body {
+    padding: 0 16rpx 24rpx;
+
+    &__week {
+      @include rb-flex;
+      margin-bottom: 8rpx;
+    }
+
+    &__week-item {
+      flex: 1;
+      text-align: center;
+      color: var(--rb-text-color-secondary);
+      font-size: $rb-font-sm;
+    }
+
+    &__days {
+      @include rb-flex;
+      flex-wrap: wrap;
+    }
+
+    &__day {
+      @include rb-flex-center;
+      width: calc(100% / 7);
+      height: 80rpx;
+      color: var(--rb-text-color-primary);
+      font-size: $rb-font-md;
+
+      &--selected {
+        border-radius: 50%;
+        background: var(--rb-color-primary);
+        color: var(--rb-color-white);
+      }
+
+      &--disabled {
+        color: var(--rb-disabled-color);
+      }
+
+      &--empty {
+        pointer-events: none;
+      }
+    }
+  }
+
+  &__footer {
+    padding: 16rpx 32rpx 32rpx;
+  }
+
+  &__confirm {
+    @include rb-flex-center;
+    height: 80rpx;
+    border-radius: $rb-radius-md;
+    background: var(--rb-color-primary);
+    color: var(--rb-color-white);
+    font-size: $rb-font-md;
+  }
+}

@@ -1,0 +1,140 @@
+.rb-tag {
+  @include rb-flex-center;
+  display: inline-flex;
+  vertical-align: middle;
+  height: 48rpx;
+  padding: 0 18rpx;
+  border-radius: 8rpx;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  font-size: 24rpx;
+  line-height: 1;
+  white-space: nowrap;
+
+  &__text {
+    color: inherit;
+    line-height: 1.2;
+  }
+
+  &__close {
+    margin-left: 8rpx;
+    font-size: 26rpx;
+    line-height: 1;
+    opacity: 0.85;
+  }
+
+  /* size —— Element Plus: large / default / small */
+  &--large {
+    height: 56rpx;
+    padding: 0 22rpx;
+    font-size: 26rpx;
+  }
+
+  &--small {
+    height: 40rpx;
+    padding: 0 12rpx;
+    font-size: 22rpx;
+  }
+
+  &--round {
+    border-radius: 999rpx;
+  }
+
+  &--disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  /* —— light（默认浅底，对齐 EP light） —— */
+  &--light.rb-tag--primary {
+    color: var(--rb-color-primary);
+    background: var(--rb-color-primary-light);
+    border-color: var(--rb-color-primary-light-3);
+  }
+
+  &--light.rb-tag--success {
+    color: var(--rb-color-success-dark);
+    background: var(--rb-color-success-light);
+    border-color: var(--rb-color-success-light-3);
+  }
+
+  &--light.rb-tag--warning {
+    color: var(--rb-color-warning-dark);
+    background: var(--rb-color-warning-light);
+    border-color: var(--rb-color-warning-light-3);
+  }
+
+  &--light.rb-tag--error {
+    color: var(--rb-color-error-dark);
+    background: var(--rb-color-error-light);
+    border-color: var(--rb-color-error-light-3);
+  }
+
+  &--light.rb-tag--info {
+    color: var(--rb-color-info-dark);
+    background: var(--rb-color-info-light);
+    border-color: var(--rb-color-info-light-3);
+  }
+
+  /* —— dark（实心白字，对齐 EP dark / 示意图） —— */
+  &--dark.rb-tag--primary {
+    color: var(--rb-color-white);
+    background: var(--rb-color-primary);
+    border-color: var(--rb-color-primary);
+  }
+
+  &--dark.rb-tag--success {
+    color: var(--rb-color-white);
+    background: var(--rb-color-success);
+    border-color: var(--rb-color-success);
+  }
+
+  &--dark.rb-tag--warning {
+    color: var(--rb-color-white);
+    background: var(--rb-color-warning);
+    border-color: var(--rb-color-warning);
+  }
+
+  &--dark.rb-tag--error {
+    color: var(--rb-color-white);
+    background: var(--rb-color-error);
+    border-color: var(--rb-color-error);
+  }
+
+  &--dark.rb-tag--info {
+    color: var(--rb-color-white);
+    background: var(--rb-color-info);
+    border-color: var(--rb-color-info);
+  }
+
+  /* —— plain（白底描边，对齐 EP plain） —— */
+  &--plain.rb-tag--primary {
+    color: var(--rb-color-primary);
+    background: var(--rb-color-white);
+    border-color: var(--rb-color-primary-light-5);
+  }
+
+  &--plain.rb-tag--success {
+    color: var(--rb-color-success);
+    background: var(--rb-color-white);
+    border-color: var(--rb-color-success-light-5);
+  }
+
+  &--plain.rb-tag--warning {
+    color: var(--rb-color-warning);
+    background: var(--rb-color-white);
+    border-color: var(--rb-color-warning-light-5);
+  }
+
+  &--plain.rb-tag--error {
+    color: var(--rb-color-error);
+    background: var(--rb-color-white);
+    border-color: var(--rb-color-error-light-5);
+  }
+
+  &--plain.rb-tag--info {
+    color: var(--rb-color-info);
+    background: var(--rb-color-white);
+    border-color: var(--rb-color-info-light-5);
+  }
+}

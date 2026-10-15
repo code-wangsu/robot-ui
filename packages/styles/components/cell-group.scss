@@ -1,0 +1,19 @@
+.rb-cell-group {
+  background: var(--rb-color-white);
+
+  &--inset {
+    margin: 0 32rpx;
+    border-radius: $rb-radius-md;
+    overflow: hidden;
+  }
+
+  &__title {
+    padding: 24rpx 32rpx 12rpx;
+    color: var(--rb-text-color-secondary);
+    font-size: $rb-font-sm;
+  }
+
+  &--border &__body {
+    @include rb-hairline-bottom;
+  }
+}

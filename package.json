@@ -1,0 +1,42 @@
+{
+  "name": "robot-ui-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "面向 uni-app 安卓端的 Vue3 组件库 monorepo",
+  "packageManager": "pnpm@10.30.2",
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=9"
+  },
+  "scripts": {
+    "dev:docs": "pnpm --filter @robot-ui/docs dev",
+    "dev:playground": "pnpm --filter @robot-ui/playground dev",
+    "docs:gen": "node apps/docs/scripts/generate-component-docs.mjs",
+    "docs:gen-demos": "node apps/docs/scripts/generate-demo-docs.mjs",
+    "icons:gen": "node packages/assets/scripts/generate-icons.mjs",
+    "build": "pnpm -r --filter=./packages/* run build",
+    "build:lib": "pnpm --filter robot-ui build",
+    "build:docs": "pnpm --filter @robot-ui/docs build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "pnpm -r --filter=./packages/* run typecheck",
+    "clean": "pnpm -r exec rimraf dist coverage"
+  },
+  "devDependencies": {
+    "@types/lodash-es": "^4.17.12",
+    "@types/node": "^22.13.10",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vue/test-utils": "^2.4.6",
+    "jsdom": "^26.0.0",
+    "rimraf": "^6.0.1",
+    "sass": "^1.85.1",
+    "typescript": "^5.8.2",
+    "vitest": "^3.0.8",
+    "vue": "^3.5.13"
+  },
+  "pnpm": {
+    "overrides": {
+      "unconfig": "7.3.2"
+    }
+  }
+}

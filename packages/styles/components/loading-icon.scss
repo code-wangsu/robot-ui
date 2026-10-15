@@ -1,0 +1,13 @@
+.rb-loading-icon {
+  border: 4rpx solid var(--rb-color-primary-light);
+  border-top-color: var(--rb-color-primary);
+  border-radius: 50%;
+  animation: rb-loading-rotate 0.8s linear infinite;
+
+  &--spinner {
+    border-radius: 0;
+    border: none;
+    background: linear-gradient(var(--rb-color-primary) 0 0) 0 50%/30% 4rpx no-repeat,
+      linear-gradient(var(--rb-color-primary) 0 0) 100% 50%/30% 4rpx no-repeat;
+  }
+}

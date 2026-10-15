@@ -1,0 +1,44 @@
+.rb-keyboard {
+  background: var(--rb-bg-color);
+
+  &__keys {
+    @include rb-flex;
+    flex-wrap: wrap;
+    padding: 16rpx;
+    gap: 12rpx;
+  }
+
+  &__key {
+    @include rb-flex-center;
+    width: calc((100% - 24rpx) / 3);
+    background: var(--rb-color-white);
+    border-radius: $rb-radius-md;
+    color: var(--rb-text-color-primary);
+    font-size: 40rpx;
+
+    &--gray {
+      background: var(--rb-color-info-light);
+    }
+  }
+
+  &__bar {
+    @include rb-flex;
+    gap: 16rpx;
+    padding: 16rpx 24rpx 24rpx;
+  }
+
+  &__btn {
+    @include rb-flex-center;
+    flex: 1;
+    height: 80rpx;
+    border-radius: $rb-radius-md;
+    background: var(--rb-color-white);
+    color: var(--rb-text-color-primary);
+    font-size: $rb-font-md;
+
+    &--primary {
+      background: var(--rb-color-primary);
+      color: var(--rb-color-white);
+    }
+  }
+}

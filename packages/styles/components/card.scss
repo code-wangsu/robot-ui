@@ -1,0 +1,91 @@
+.rb-card {
+  overflow: hidden;
+  border: 1rpx solid #e4e7ed;
+  border-radius: 12rpx;
+  background: var(--rb-color-white);
+
+  &__header {
+    @include rb-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16rpx;
+    padding: 20rpx 24rpx;
+  }
+
+  &__title {
+    flex: 1;
+    min-width: 0;
+    font-size: 28rpx;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  &__extra {
+    flex-shrink: 0;
+    font-size: 24rpx;
+    line-height: 1.4;
+  }
+
+  &__body {
+    padding: 22rpx 24rpx;
+    color: var(--rb-text-color-primary);
+    font-size: 26rpx;
+    line-height: 1.7;
+    background: var(--rb-color-white);
+  }
+
+  &__footer {
+    padding: 0 24rpx 22rpx;
+  }
+
+  /* 主题：对齐示意图 success 绿头 */
+  &__header--success {
+    background: var(--rb-color-success-light);
+    color: var(--rb-color-success-dark);
+
+    .rb-card__title,
+    .rb-card__extra {
+      color: var(--rb-color-success-dark);
+    }
+  }
+
+  &__header--warning {
+    background: var(--rb-color-warning-light);
+    color: var(--rb-color-warning-dark);
+
+    .rb-card__title,
+    .rb-card__extra {
+      color: var(--rb-color-warning-dark);
+    }
+  }
+
+  &__header--error {
+    background: var(--rb-color-error-light);
+    color: var(--rb-color-error-dark);
+
+    .rb-card__title,
+    .rb-card__extra {
+      color: var(--rb-color-error-dark);
+    }
+  }
+
+  &__header--info {
+    background: var(--rb-color-info-light);
+    color: var(--rb-color-info-dark);
+
+    .rb-card__title,
+    .rb-card__extra {
+      color: var(--rb-color-info-dark);
+    }
+  }
+
+  &__header--primary {
+    background: var(--rb-color-primary-light);
+    color: var(--rb-color-primary-dark);
+
+    .rb-card__title,
+    .rb-card__extra {
+      color: var(--rb-color-primary-dark);
+    }
+  }
+}

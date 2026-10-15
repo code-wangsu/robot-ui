@@ -1,0 +1,52 @@
+.rb-tabs {
+  background: var(--rb-color-white);
+
+  &__scroll {
+    white-space: nowrap;
+  }
+
+  &__nav {
+    @include rb-flex;
+    position: relative;
+    align-items: center;
+  }
+
+  &--scrollable &__nav {
+    display: inline-flex;
+  }
+
+  &__item {
+    flex: 1;
+    padding: 24rpx 16rpx;
+    text-align: center;
+    font-size: $rb-font-md;
+    color: var(--rb-text-color-regular);
+    transition: color 0.2s ease;
+
+    &--active {
+      color: var(--rb-color-primary);
+      font-weight: 600;
+    }
+
+    &--disabled {
+      opacity: 0.5;
+    }
+  }
+
+  &--scrollable &__item {
+    flex: none;
+    min-width: 120rpx;
+  }
+
+  &__line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 999rpx;
+    background: var(--rb-color-primary);
+    transition-property: left, transform, width, opacity;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: left;
+    pointer-events: none;
+  }
+}

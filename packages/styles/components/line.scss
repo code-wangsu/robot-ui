@@ -1,0 +1,14 @@
+.rb-line {
+  background: var(--rb-border-color);
+  /* 文档/H5 兜底：避免仅靠内联 rpx 高度被忽略导致看不见 */
+  min-height: 1px;
+
+  &--hairline {
+    transform: scaleY(0.5);
+  }
+
+  &--col {
+    display: inline-block;
+    min-width: 1px;
+  }
+}

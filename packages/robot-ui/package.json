@@ -1,0 +1,82 @@
+{
+  "name": "robot-ui",
+  "version": "1.0.0",
+  "description": "面向 uni-app 安卓端的 Vue3 组件库（参考 uView2.0 架构，增强 Table / 下拉加载 / 虚拟滚动）",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "unpkg": "./dist/index.umd.js",
+  "jsdelivr": "./dist/index.umd.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./style.css": "./dist/robot-ui.css",
+    "./styles": "./styles/index.scss",
+    "./styles/*": "./styles/*",
+    "./components/*": "./components/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "components",
+    "styles",
+    "README.md"
+  ],
+  "sideEffects": [
+    "**/*.css",
+    "**/*.scss",
+    "**/*.vue"
+  ],
+  "scripts": {
+    "build": "rimraf dist && rollup -c rollup.config.mjs && node ./scripts/copy-assets.mjs",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "pnpm run build"
+  },
+  "keywords": [
+    "uni-app",
+    "vue3",
+    "component-library",
+    "android",
+    "robot-ui",
+    "uview"
+  ],
+  "peerDependencies": {
+    "vue": "^3.4.0"
+  },
+  "dependencies": {
+    "@robot-ui/utils": "workspace:*",
+    "lodash-es": "^4.17.21"
+  },
+  "devDependencies": {
+    "@robot-ui/components": "workspace:*",
+    "@robot-ui/styles": "workspace:*",
+    "@rollup/plugin-commonjs": "^28.0.3",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-replace": "^6.0.2",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.1.2",
+    "fs-extra": "^11.3.0",
+    "postcss": "^8.5.3",
+    "rimraf": "^6.0.1",
+    "rollup": "^4.35.0",
+    "rollup-plugin-dts": "^6.1.1",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-vue": "^6.0.0",
+    "sass": "^1.85.1",
+    "tslib": "^2.8.1",
+    "typescript": "^5.8.2",
+    "vue": "^3.5.13"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/example/robot-ui"
+  },
+  "license": "MIT"
+}

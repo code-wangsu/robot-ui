@@ -1,0 +1,9 @@
+.rb-scroll-list {
+  width: 100%;
+  white-space: nowrap;
+
+  &__inner {
+    display: inline-flex;
+    align-items: center;
+  }
+}

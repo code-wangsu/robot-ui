@@ -1,0 +1,31 @@
+.rb-switch {
+  display: inline-flex;
+
+  &__track {
+    position: relative;
+    border-radius: 999rpx;
+    background: var(--rb-disabled-color);
+    transition: background-color 0.2s;
+  }
+
+  &__thumb {
+    position: absolute;
+    top: 4rpx;
+    left: 4rpx;
+    border-radius: 50%;
+    background: var(--rb-color-white);
+    transition: transform 0.2s;
+  }
+
+  &--on &__track {
+    background: var(--rb-color-primary);
+  }
+
+  &--on &__thumb {
+    transform: translateX(calc(100% - 4rpx));
+  }
+
+  &--disabled {
+    opacity: 0.5;
+  }
+}

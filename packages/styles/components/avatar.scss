@@ -1,0 +1,52 @@
+.rb-avatar {
+  @include rb-flex-center;
+  overflow: hidden;
+  background: var(--rb-bg-color);
+
+  &--circle {
+    border-radius: 50%;
+  }
+
+  &--square {
+    border-radius: $rb-radius-md;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__text {
+    font-size: $rb-font-md;
+    color: var(--rb-color-white);
+    font-weight: 600;
+  }
+}
+
+.rb-avatar-group {
+  @include rb-flex;
+  align-items: center;
+
+  &__item {
+    overflow: hidden;
+    border-radius: 50%;
+    border: 2rpx solid var(--rb-color-white);
+    box-sizing: border-box;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  &__more {
+    @include rb-flex-center;
+    border-radius: 50%;
+    background: var(--rb-bg-color);
+    color: var(--rb-text-color-secondary);
+    font-size: $rb-font-sm;
+    border: 2rpx solid var(--rb-color-white);
+    box-sizing: border-box;
+  }
+}

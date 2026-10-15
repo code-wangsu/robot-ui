@@ -1,0 +1,14 @@
+.rb-pull-refresh {
+  height: 100%;
+
+  &__scroll {
+    height: 100%;
+  }
+
+  &__status {
+    @include rb-flex-center;
+    height: 80rpx;
+    color: var(--rb-text-color-secondary);
+    font-size: $rb-font-sm;
+  }
+}

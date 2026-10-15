@@ -1,0 +1,376 @@
+/**
+ * robot-ui 文档站主题 —— 对齐 Element Plus 官网风格
+ * 品牌色：#3c9cff
+ */
+
+:root {
+  /* —— Brand —— */
+  --rb-brand: #3c9cff;
+  --rb-brand-light: #79bbff;
+  --rb-brand-lighter: #a0cfff;
+  --rb-brand-lightest: #ecf5ff;
+  --rb-brand-dark: #3375b9;
+
+  /* —— VitePress 覆盖 —— */
+  --vp-c-brand-1: #3c9cff;
+  --vp-c-brand-2: #79bbff;
+  --vp-c-brand-3: #3375b9;
+  --vp-c-brand-soft: rgba(60, 156, 255, 0.12);
+
+  --vp-c-bg: #ffffff;
+  --vp-c-bg-alt: #f5f7fa;
+  --vp-c-bg-soft: #f5f7fa;
+  --vp-c-bg-elv: #ffffff;
+
+  --vp-c-text-1: #303133;
+  --vp-c-text-2: #606266;
+  --vp-c-text-3: #909399;
+
+  --vp-c-divider: #e4e7ed;
+  --vp-c-gutter: #e4e7ed;
+  --vp-c-border: #dcdfe6;
+
+  --vp-button-brand-bg: #3c9cff;
+  --vp-button-brand-hover-bg: #79bbff;
+  --vp-button-brand-active-bg: #3375b9;
+  --vp-button-brand-text: #ffffff;
+  --vp-button-brand-border: transparent;
+  --vp-button-brand-hover-border: transparent;
+
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(120deg, #3c9cff, #79bbff);
+  --vp-home-hero-image-background-image: linear-gradient(135deg, rgba(60, 156, 255, 0.28) 0%, rgba(160, 207, 255, 0.18) 100%);
+  --vp-home-hero-image-filter: blur(44px);
+
+  --vp-sidebar-bg-color: #ffffff;
+  --vp-nav-bg-color: rgba(255, 255, 255, 0.88);
+
+  --vp-code-block-bg: #fafafa;
+  --vp-code-color: #303133;
+
+  --rb-demo-border: #dcdfe6;
+  --rb-demo-radius: 4px;
+  --rb-demo-hover: #3c9cff;
+}
+
+.dark {
+  --vp-c-brand-1: #79bbff;
+  --vp-c-brand-2: #a0cfff;
+  --vp-c-brand-3: #3c9cff;
+  --vp-c-brand-soft: rgba(60, 156, 255, 0.18);
+
+  --vp-c-bg: #141414;
+  --vp-c-bg-alt: #1d1e1f;
+  --vp-c-bg-soft: #1d1e1f;
+  --vp-c-bg-elv: #1d1e1f;
+
+  --vp-c-text-1: #e5eaf3;
+  --vp-c-text-2: #cfd3dc;
+  --vp-c-text-3: #a3a6ad;
+
+  --vp-c-divider: #363637;
+  --vp-c-border: #4c4d4f;
+
+  --vp-sidebar-bg-color: #141414;
+  --vp-nav-bg-color: rgba(20, 20, 20, 0.88);
+  --vp-code-block-bg: #1d1e1f;
+
+  --rb-demo-border: #414243;
+}
+
+/* ========== 顶栏 ========== */
+.VPNav {
+  border-bottom: 1px solid var(--vp-c-divider) !important;
+  backdrop-filter: saturate(180%) blur(12px);
+}
+
+.VPNavBarTitle .title {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.VPNavBarMenuLink.active,
+.VPNavBarMenuLink:hover {
+  color: var(--vp-c-brand-1) !important;
+}
+
+.VPNavBarSearch .DocSearch-Button:hover {
+  border-color: var(--vp-c-brand-1);
+}
+
+/* ========== 侧边栏（对齐 EP：浅底圆角激活项） ========== */
+.VPSidebar {
+  border-right: 1px solid var(--vp-c-divider) !important;
+  padding-top: 16px !important;
+}
+
+.VPSidebarItem.level-0 > .item > .text,
+.VPSidebarItem.level-0 > .item > .link > .text {
+  font-weight: 700 !important;
+  color: var(--vp-c-text-1) !important;
+  font-size: 13px !important;
+  letter-spacing: 0.02em;
+}
+
+.VPSidebarItem.level-1 .item .link,
+.VPSidebarItem.level-2 .item .link,
+.VPSidebarItem.level-3 .item .link {
+  padding: 6px 16px !important;
+  margin: 2px 8px !important;
+  border-radius: 8px !important;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.VPSidebarItem .item .link:hover {
+  color: var(--vp-c-brand-1) !important;
+  background: var(--vp-c-brand-soft) !important;
+}
+
+.VPSidebarItem.is-active > .item .link {
+  color: var(--vp-c-brand-1) !important;
+  background: var(--vp-c-brand-soft) !important;
+  font-weight: 600 !important;
+}
+
+.VPSidebarItem.is-active > .item .link .text {
+  color: var(--vp-c-brand-1) !important;
+}
+
+/* 去掉默认左侧竖线指示 */
+.VPSidebarItem.is-active > .item .link::before {
+  display: none !important;
+}
+
+/* ========== 正文排版 ========== */
+.VPDoc {
+  padding-top: 24px !important;
+}
+
+.VPDoc h1 {
+  font-size: 32px !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px !important;
+  color: var(--vp-c-text-1);
+}
+
+.VPDoc h2 {
+  font-size: 24px !important;
+  font-weight: 600 !important;
+  margin-top: 40px !important;
+  padding-top: 16px !important;
+  border-top: 1px solid var(--vp-c-divider);
+  color: var(--vp-c-text-1);
+}
+
+.VPDoc h3 {
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  color: var(--vp-c-text-1);
+}
+
+.VPDoc p,
+.VPDoc li {
+  line-height: 1.7;
+  color: var(--vp-c-text-2);
+}
+
+.VPDoc a {
+  color: var(--vp-c-brand-1);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.VPDoc a:hover {
+  color: var(--vp-c-brand-2);
+}
+
+/* tip / warning 盒子 */
+.VPDoc .custom-block.tip {
+  border-color: var(--vp-c-brand-1);
+  background: var(--rb-brand-lightest);
+}
+
+.dark .VPDoc .custom-block.tip {
+  background: rgba(60, 156, 255, 0.12);
+}
+
+.VPDoc .custom-block.tip .custom-block-title {
+  color: var(--vp-c-brand-1);
+}
+
+/* ========== API 表格（对齐 EP） ========== */
+.VPDoc table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0 28px;
+  font-size: 14px;
+  line-height: 1.5;
+  border: none;
+}
+
+.VPDoc tr {
+  border-top: none;
+  background: transparent !important;
+}
+
+.VPDoc th,
+.VPDoc td {
+  border: none;
+  border-bottom: 1px solid var(--vp-c-divider);
+  padding: 12px 16px;
+  text-align: left;
+}
+
+.VPDoc th {
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-1);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.VPDoc td {
+  color: var(--vp-c-text-2);
+}
+
+.VPDoc td code,
+.VPDoc th code,
+.VPDoc p code {
+  color: var(--vp-c-brand-1);
+  background: var(--vp-c-brand-soft);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* ========== 右侧 TOC ========== */
+.VPDocAside .outline-link.active,
+.VPDocAside .outline-link:hover {
+  color: var(--vp-c-brand-1) !important;
+}
+
+.VPDocAside .outline-marker {
+  background-color: var(--vp-c-brand-1) !important;
+}
+
+/* ========== 首页按钮 ========== */
+.VPButton.brand {
+  border-radius: 20px !important;
+  font-weight: 600;
+}
+
+.VPButton.alt {
+  border-radius: 20px !important;
+}
+
+/* ========== 本地搜索高亮 ========== */
+.VPLocalSearchBox .result.selected,
+.VPLocalSearchBox mark {
+  color: var(--vp-c-brand-1);
+}
+
+/* ========== Demo 预览区内组件兜底 ========== */
+.demo-block__preview view,
+.demo-block__preview text,
+.demo-block__preview div,
+.demo-block__preview span {
+  box-sizing: border-box;
+}
+
+.demo-block__preview {
+  font-size: 14px;
+  color: #303133;
+  min-height: 64px;
+}
+
+.dark .demo-block__preview {
+  color: var(--vp-c-text-1);
+}
+
+.demo-block__preview .rb-multi-select-field,
+.demo-block__preview .rb-date-picker,
+.demo-block__preview .rb-button,
+.demo-block__preview .rb-slider,
+.demo-block__preview .rb-table,
+.demo-block__preview .rb-image,
+.demo-block__preview .rb-video {
+  max-width: 100%;
+}
+
+.demo-block__preview .rb-line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--rb-border-color, #dadbde);
+}
+
+.demo-block__preview .rb-grid {
+  width: 100%;
+  background: var(--vp-c-bg);
+}
+
+.demo-block__preview .rb-grid-item {
+  background: var(--vp-c-bg-soft);
+}
+
+.demo-block__preview .rb-table {
+  border: 1px solid var(--vp-c-divider);
+}
+
+/* picker-view：弹层 teleport 到 body，样式必须全局生效 */
+.uni-picker-view-stub,
+picker-view {
+  display: grid !important;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+  width: 100% !important;
+  height: 220px !important;
+  max-height: 220px !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+  background: #fafbfc;
+  border-radius: 8px;
+}
+
+.uni-picker-view-column-stub,
+picker-view-column {
+  display: block !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  height: 100% !important;
+  max-height: 220px !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  box-sizing: border-box !important;
+  text-align: center;
+}
+
+/* 未命中 Vue stub 时的兜底：强制子项竖排，避免数字横串 */
+picker-view-column > * {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 36px !important;
+  min-height: 36px !important;
+  max-width: 100% !important;
+  flex-shrink: 0 !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+.uni-picker-view-column-stub {
+  scrollbar-width: thin;
+}
+
+.demo-block__preview .rb-datetime-panel {
+  width: min(100%, 420px);
+  max-width: 100%;
+}
+
+.demo-block__preview .rb-empty__image {
+  max-width: 160px;
+  height: auto;
+}

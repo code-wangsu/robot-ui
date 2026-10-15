@@ -1,0 +1,38 @@
+.rb-cell {
+  @include rb-flex;
+  align-items: center;
+  padding: 24rpx 32rpx;
+  background: var(--rb-color-white);
+  @include rb-hairline-bottom;
+
+  &__body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__title {
+    color: var(--rb-text-color-primary);
+    font-size: $rb-font-md;
+  }
+
+  &__label {
+    margin-top: 8rpx;
+    color: var(--rb-text-color-secondary);
+    font-size: $rb-font-sm;
+  }
+
+  &__value {
+    margin-left: 24rpx;
+    color: var(--rb-text-color-regular);
+    font-size: $rb-font-md;
+  }
+
+  &__right {
+    margin-left: 12rpx;
+    color: var(--rb-text-color-placeholder);
+  }
+
+  &--clickable:active {
+    background: var(--rb-bg-color);
+  }
+}

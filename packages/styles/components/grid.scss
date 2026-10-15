@@ -1,0 +1,27 @@
+.rb-grid {
+  @include rb-flex;
+  flex-wrap: wrap;
+
+  &--border {
+    border-left: 1px solid var(--rb-border-color);
+    border-top: 1px solid var(--rb-border-color);
+  }
+}
+
+.rb-grid-item {
+  box-sizing: border-box;
+  @include rb-flex-center;
+  padding: 24rpx 12rpx;
+  min-height: 120rpx;
+
+  &__text {
+    font-size: 26rpx;
+    color: var(--rb-text-color-primary);
+    text-align: center;
+  }
+
+  &--border {
+    border-right: 1px solid var(--rb-border-color);
+    border-bottom: 1px solid var(--rb-border-color);
+  }
+}

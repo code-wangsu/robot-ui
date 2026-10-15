@@ -1,0 +1,44 @@
+.rb-form-item {
+  @include rb-flex;
+  padding: 24rpx 32rpx;
+  background: var(--rb-color-white);
+
+  &--label-left {
+    align-items: flex-start;
+  }
+
+  &__label {
+    width: var(--rb-form-label-width, 160rpx);
+    color: var(--rb-text-color-primary);
+    font-size: $rb-font-md;
+    line-height: 80rpx;
+  }
+
+  &--label-top &__label {
+    width: auto;
+    line-height: 1.5;
+    margin-bottom: 12rpx;
+  }
+
+  &__required {
+    color: var(--rb-color-error);
+    margin-right: 4rpx;
+  }
+
+  &__content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__message {
+    display: block;
+    margin-top: 8rpx;
+    color: var(--rb-color-error);
+    font-size: $rb-font-xs;
+  }
+
+  &--error .rb-input,
+  &--error .rb-textarea {
+    border-color: var(--rb-color-error);
+  }
+}

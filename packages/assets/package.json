@@ -1,0 +1,33 @@
+{
+  "name": "@robot-ui/assets",
+  "version": "1.0.0",
+  "description": "robot-ui 静态资源（iconfont 字体与图标元数据）",
+  "type": "module",
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./iconfont.css": "./iconfont.css",
+    "./icons-data": "./src/icons-data.ts",
+    "./iconfont.json": "./iconfont.json",
+    "./*": "./*"
+  },
+  "files": [
+    "src",
+    "iconfont.css",
+    "iconfont.js",
+    "iconfont.json",
+    "iconfont.ttf",
+    "iconfont.woff",
+    "iconfont.woff2",
+    "icon_nodata.png"
+  ],
+  "scripts": {
+    "generate": "node ./scripts/generate-icons.mjs",
+    "build": "node ./scripts/generate-icons.mjs"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

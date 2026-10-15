@@ -1,0 +1,61 @@
+@use 'sass:map';
+
+// robot-ui 主题变量（参考 Element Plus + uView，面向 uni-app）
+@import './themes/palettes.scss';
+
+// ---------- 文本 / 基础 ----------
+$rb-main-color: #303133 !default;
+$rb-content-color: #606266 !default;
+$rb-tips-color: #909193 !default;
+$rb-light-color: #c0c4cc !default;
+$rb-border-color: #dadbde !default;
+$rb-bg-color: #f3f4f6 !default;
+$rb-disabled-color: #c8c9cc !default;
+$rb-white: #ffffff !default;
+
+// ---------- 语义色（可用 Sass 覆盖；默认跟随科技蓝） ----------
+$rb-primary: map.get(map.get($rb-theme-presets, $rb-default-theme), primary) !default;
+$rb-primary-dark: rb-mix-dark($rb-primary, 2) !default;
+$rb-primary-disabled: rb-mix-light($rb-primary, 5) !default;
+$rb-primary-light: rb-mix-light($rb-primary, 9) !default;
+
+$rb-warning: $rb-tone-warning !default;
+$rb-warning-dark: rb-mix-dark($rb-warning, 2) !default;
+$rb-warning-disabled: rb-mix-light($rb-warning, 5) !default;
+$rb-warning-light: rb-mix-light($rb-warning, 9) !default;
+
+$rb-success: $rb-tone-success !default;
+$rb-success-dark: rb-mix-dark($rb-success, 2) !default;
+$rb-success-disabled: rb-mix-light($rb-success, 5) !default;
+$rb-success-light: rb-mix-light($rb-success, 9) !default;
+
+$rb-error: $rb-tone-error !default;
+$rb-error-dark: rb-mix-dark($rb-error, 2) !default;
+$rb-error-disabled: rb-mix-light($rb-error, 5) !default;
+$rb-error-light: rb-mix-light($rb-error, 9) !default;
+
+$rb-info: $rb-tone-info !default;
+$rb-info-dark: rb-mix-dark($rb-info, 2) !default;
+$rb-info-disabled: rb-mix-light($rb-info, 5) !default;
+$rb-info-light: rb-mix-light($rb-info, 9) !default;
+
+// ---------- 圆角 / 字号 / 层级 ----------
+$rb-radius-sm: 6rpx !default;
+$rb-radius-md: 12rpx !default;
+$rb-radius-lg: 20rpx !default;
+
+$rb-font-xs: 22rpx !default;
+$rb-font-sm: 24rpx !default;
+$rb-font-md: 28rpx !default;
+$rb-font-lg: 32rpx !default;
+
+$rb-z-index-toast: 10090 !default;
+$rb-z-index-popup: 10075 !default;
+$rb-z-index-mask: 10070 !default;
+/** 媒体原生组件建议低于弹层 */
+$rb-z-index-video: 0 !default;
+
+// ---------- CSS 变量桥接：组件优先读 var(--rb-*)，便于运行时切主题 ----------
+@function rb-css($name, $fallback) {
+  @return var(--rb-#{$name}, #{$fallback});
+}

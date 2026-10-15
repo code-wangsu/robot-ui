@@ -1,0 +1,208 @@
+.rb-pagination {
+  @include rb-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12rpx;
+  color: var(--rb-text-color-regular);
+  font-size: $rb-font-sm;
+  user-select: none;
+
+  &__total {
+    margin-right: 8rpx;
+    color: var(--rb-text-color-secondary);
+    font-size: $rb-font-sm;
+    white-space: nowrap;
+  }
+
+  &__sizes {
+    @include rb-flex-center;
+    gap: 6rpx;
+    height: 64rpx;
+    padding: 0 20rpx;
+    border: 1rpx solid var(--rb-border-color);
+    border-radius: $rb-radius-md;
+    background: var(--rb-color-white);
+    box-sizing: border-box;
+
+    &.is-disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  }
+
+  &__sizes-text {
+    color: var(--rb-text-color-regular);
+    font-size: $rb-font-sm;
+  }
+
+  &__sizes-arrow {
+    color: var(--rb-text-color-secondary);
+    font-size: 20rpx;
+    line-height: 1;
+  }
+
+  &__btn {
+    @include rb-flex-center;
+    min-width: 120rpx;
+    height: 64rpx;
+    padding: 0 20rpx;
+    border: 1rpx solid var(--rb-border-color);
+    border-radius: $rb-radius-md;
+    background: var(--rb-color-white);
+    color: var(--rb-text-color-regular);
+    font-size: $rb-font-sm;
+    box-sizing: border-box;
+
+    &.is-disabled {
+      color: var(--rb-disabled-color);
+      background: var(--rb-bg-color);
+      border-color: var(--rb-border-color);
+      opacity: 0.7;
+      pointer-events: none;
+    }
+  }
+
+  &__pager {
+    @include rb-flex;
+    align-items: center;
+    gap: 8rpx;
+  }
+
+  &__number {
+    @include rb-flex-center;
+    min-width: 64rpx;
+    height: 64rpx;
+    padding: 0 10rpx;
+    border: 1rpx solid transparent;
+    border-radius: $rb-radius-md;
+    color: var(--rb-text-color-regular);
+    font-size: $rb-font-sm;
+    box-sizing: border-box;
+
+    &.is-ellipsis {
+      min-width: 48rpx;
+      color: var(--rb-text-color-secondary);
+    }
+
+    &.is-active {
+      color: var(--rb-color-primary);
+      font-weight: 600;
+    }
+
+    &.is-disabled {
+      opacity: 0.55;
+      pointer-events: none;
+    }
+  }
+
+  &__jumper {
+    @include rb-flex;
+    align-items: center;
+    gap: 10rpx;
+    margin-left: 4rpx;
+  }
+
+  &__jumper-label {
+    color: var(--rb-text-color-secondary);
+    font-size: $rb-font-sm;
+  }
+
+  &__jumper-input {
+    width: 88rpx;
+    height: 64rpx;
+    padding: 0 8rpx;
+    border: 1rpx solid var(--rb-border-color);
+    border-radius: $rb-radius-md;
+    background: var(--rb-color-white);
+    color: var(--rb-text-color-primary);
+    font-size: $rb-font-sm;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  /* background 模式：对齐 Element Plus */
+  &--background {
+    .rb-pagination__number {
+      background: var(--rb-bg-color);
+      border-color: transparent;
+
+      &.is-active {
+        color: var(--rb-color-white);
+        background: var(--rb-color-primary);
+        border-color: var(--rb-color-primary);
+      }
+
+      &.is-ellipsis {
+        background: transparent;
+      }
+    }
+
+    .rb-pagination__btn {
+      background: var(--rb-bg-color);
+      border-color: transparent;
+
+      &:not(.is-disabled):active {
+        color: var(--rb-color-primary);
+      }
+    }
+  }
+
+  &--small {
+    gap: 8rpx;
+    font-size: $rb-font-xs;
+
+    .rb-pagination__total,
+    .rb-pagination__sizes-text,
+    .rb-pagination__btn,
+    .rb-pagination__number,
+    .rb-pagination__jumper-label {
+      font-size: $rb-font-xs;
+    }
+
+    .rb-pagination__btn,
+    .rb-pagination__sizes,
+    .rb-pagination__number,
+    .rb-pagination__jumper-input {
+      height: 52rpx;
+    }
+
+    .rb-pagination__btn {
+      min-width: 96rpx;
+      padding: 0 14rpx;
+    }
+
+    .rb-pagination__number {
+      min-width: 52rpx;
+    }
+
+    .rb-pagination__jumper-input {
+      width: 72rpx;
+    }
+  }
+
+  &--large {
+    gap: 16rpx;
+
+    .rb-pagination__btn,
+    .rb-pagination__sizes,
+    .rb-pagination__number,
+    .rb-pagination__jumper-input {
+      height: 80rpx;
+    }
+
+    .rb-pagination__btn {
+      min-width: 140rpx;
+      font-size: $rb-font-md;
+    }
+
+    .rb-pagination__number {
+      min-width: 80rpx;
+      font-size: $rb-font-md;
+    }
+  }
+
+  &--disabled {
+    opacity: 0.55;
+    pointer-events: none;
+  }
+}

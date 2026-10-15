@@ -1,0 +1,35 @@
+.rb-loading {
+  @include rb-flex-center;
+  flex-direction: column;
+
+  &--horizontal {
+    flex-direction: row;
+
+    .rb-loading__text {
+      margin-top: 0;
+      margin-left: 16rpx;
+    }
+  }
+
+  &--fullscreen {
+    position: fixed;
+    inset: 0;
+    z-index: $rb-z-index-mask;
+  }
+
+  &--absolute {
+    position: absolute;
+  }
+
+  &__text {
+    margin-top: 16rpx;
+    color: var(--rb-text-color-secondary);
+    font-size: $rb-font-sm;
+  }
+}
+
+@keyframes rb-loading-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}

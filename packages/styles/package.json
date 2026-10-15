@@ -1,0 +1,20 @@
+{
+  "name": "@robot-ui/styles",
+  "version": "1.0.0",
+  "description": "robot-ui 样式与主题变量",
+  "main": "index.scss",
+  "style": "index.scss",
+  "files": [
+    "*.scss",
+    "components",
+    "themes",
+    "scripts"
+  ],
+  "scripts": {
+    "build": "node -e \"console.log('@robot-ui/styles: scss source package, skip build')\"",
+    "typecheck": "node -e \"process.exit(0)\""
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

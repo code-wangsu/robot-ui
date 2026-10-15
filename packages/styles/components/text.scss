@@ -1,0 +1,71 @@
+.rb-text {
+  line-height: 1.5;
+  word-break: break-word;
+
+  &--main,
+  &--default {
+    color: var(--rb-text-color-primary);
+  }
+
+  &--content {
+    color: var(--rb-text-color-regular);
+  }
+
+  &--tips {
+    color: var(--rb-text-color-secondary);
+  }
+
+  &--primary {
+    color: var(--rb-color-primary);
+  }
+
+  &--success {
+    color: var(--rb-color-success);
+  }
+
+  &--warning {
+    color: var(--rb-color-warning);
+  }
+
+  &--error {
+    color: var(--rb-color-error);
+  }
+
+  &--info {
+    color: var(--rb-color-info);
+  }
+
+  &--mini {
+    font-size: $rb-font-xs;
+  }
+
+  &--small {
+    font-size: $rb-font-sm;
+  }
+
+  &--medium {
+    font-size: $rb-font-md;
+  }
+
+  &--large {
+    font-size: $rb-font-lg;
+  }
+
+  &--bold {
+    font-weight: 600;
+  }
+
+  &--ellipsis {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  &--truncated {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: normal;
+  }
+}

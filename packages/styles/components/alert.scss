@@ -1,0 +1,58 @@
+.rb-alert {
+  @include rb-flex;
+  align-items: flex-start;
+  padding: 20rpx 24rpx;
+  border-radius: $rb-radius-md;
+  font-size: $rb-font-sm;
+
+  &--primary {
+    background: var(--rb-color-primary-light);
+    color: var(--rb-color-primary);
+  }
+
+  &--success {
+    background: var(--rb-color-success-light);
+    color: var(--rb-color-success);
+  }
+
+  &--warning {
+    background: var(--rb-color-warning-light);
+    color: var(--rb-color-warning);
+  }
+
+  &--error {
+    background: var(--rb-color-error-light);
+    color: var(--rb-color-error);
+  }
+
+  &--info {
+    background: var(--rb-color-info-light);
+    color: var(--rb-color-info);
+  }
+
+  &__icon {
+    margin-right: 12rpx;
+    font-weight: 700;
+  }
+
+  &__body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__title {
+    display: block;
+    font-weight: 600;
+  }
+
+  &__desc {
+    display: block;
+    margin-top: 8rpx;
+    line-height: 1.5;
+  }
+
+  &__close {
+    margin-left: 12rpx;
+    font-size: 32rpx;
+  }
+}

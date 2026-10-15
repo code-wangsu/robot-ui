@@ -1,0 +1,81 @@
+.rb-date-picker {
+  @include rb-flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 64rpx;
+  padding: 0 20rpx;
+  border: 1rpx solid #dcdfe6;
+  border-radius: 8rpx;
+  background: var(--rb-color-white);
+  box-sizing: border-box;
+
+  &--disabled {
+    opacity: 0.55;
+    pointer-events: none;
+  }
+
+  &__value {
+    flex: 1;
+    min-width: 0;
+    color: var(--rb-text-color-primary);
+    font-size: 28rpx;
+  }
+
+  &__placeholder {
+    flex: 1;
+    min-width: 0;
+    color: #c0c4cc;
+    font-size: 28rpx;
+  }
+
+  &__suffix {
+    @include rb-flex;
+    align-items: center;
+    gap: 8rpx;
+    flex-shrink: 0;
+  }
+
+  &__clear {
+    @include rb-flex-center;
+    width: 36rpx;
+    height: 36rpx;
+    color: var(--rb-text-color-secondary);
+    font-size: 28rpx;
+  }
+
+  &__arrow {
+    color: #c0c4cc;
+    font-size: 32rpx;
+  }
+
+  &__modal {
+    width: 680rpx;
+    max-width: 92vw;
+    padding: 8rpx 8rpx 16rpx;
+    box-sizing: border-box;
+  }
+
+  &__modal-header {
+    @include rb-flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16rpx 20rpx 8rpx;
+  }
+
+  &__modal-title {
+    color: var(--rb-text-color-primary);
+    font-size: 30rpx;
+    font-weight: 700;
+  }
+
+  &__modal-close {
+    @include rb-flex-center;
+    width: 48rpx;
+    height: 48rpx;
+    border-radius: 10rpx;
+    border: 1rpx solid #d7e1ec;
+    color: #12355a;
+    font-size: 32rpx;
+    background: #f7fafc;
+  }
+}

@@ -1,0 +1,41 @@
+.rb-checkbox-group {
+  @include rb-flex;
+  flex-wrap: wrap;
+  gap: 24rpx;
+}
+
+.rb-checkbox {
+  @include rb-flex;
+  align-items: center;
+
+  &__icon {
+    @include rb-flex-center;
+    width: 36rpx;
+    height: 36rpx;
+    border: 1px solid var(--rb-border-color);
+    background: var(--rb-color-white);
+  }
+
+  &--square &__icon { border-radius: $rb-radius-sm; }
+  &--circle &__icon { border-radius: 50%; }
+
+  &--checked &__icon {
+    border-color: var(--rb-color-primary);
+    background: var(--rb-color-primary);
+  }
+
+  &__tick {
+    color: var(--rb-color-white);
+    font-size: 24rpx;
+  }
+
+  &__label {
+    margin-left: 12rpx;
+    color: var(--rb-text-color-primary);
+    font-size: $rb-font-md;
+  }
+
+  &--disabled {
+    opacity: 0.5;
+  }
+}

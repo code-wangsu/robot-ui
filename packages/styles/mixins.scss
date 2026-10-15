@@ -1,0 +1,32 @@
+@mixin rb-flex($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+}
+
+@mixin rb-flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin rb-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@mixin rb-hairline-bottom($color: var(--rb-border-color)) {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: $color;
+    transform: scaleY(0.5);
+    transform-origin: 0 100%;
+  }
+}

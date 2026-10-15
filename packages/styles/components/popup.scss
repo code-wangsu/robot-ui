@@ -1,0 +1,38 @@
+.rb-popup {
+  /* 根节点不占布局，具体定位由 overlay / transition 承担（对齐 uView） */
+
+  &__content {
+    position: relative;
+    background: var(--rb-color-white);
+    overflow: hidden;
+
+    &--bottom,
+    &--top {
+      width: 100%;
+    }
+
+    &--left,
+    &--right {
+      height: 100%;
+    }
+
+    &--center {
+      max-width: 80%;
+    }
+
+    &--safe-bottom {
+      padding-bottom: constant(safe-area-inset-bottom);
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 16rpx;
+    right: 24rpx;
+    z-index: 1;
+    font-size: 40rpx;
+    line-height: 1;
+    color: var(--rb-text-color-secondary);
+  }
+}

@@ -1,0 +1,154 @@
+.rb-datetime-panel {
+  width: 700rpx;
+  max-width: 94vw;
+  padding: 28rpx 24rpx 24rpx;
+  box-sizing: border-box;
+  background: var(--rb-color-white);
+
+  &__title {
+    margin-bottom: 20rpx;
+    color: var(--rb-text-color-primary);
+    font-size: 32rpx;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  &__body {
+    @include rb-flex;
+    gap: 12rpx;
+    align-items: stretch;
+  }
+
+  &__left {
+    flex: 1.35;
+    min-width: 0;
+  }
+
+  &__right {
+    flex: 0.9;
+    min-width: 0;
+    max-width: 240rpx;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &--date-only &__left {
+    flex: 1;
+  }
+
+  &__week {
+    @include rb-flex;
+    margin: 8rpx 0 4rpx;
+  }
+
+  &__week-item {
+    flex: 1;
+    text-align: center;
+    color: var(--rb-text-color-secondary);
+    font-size: 22rpx;
+  }
+
+  &__days {
+    @include rb-flex;
+    flex-wrap: wrap;
+  }
+
+  &__day {
+    @include rb-flex-center;
+    width: calc(100% / 7);
+    height: 64rpx;
+    margin: 2rpx 0;
+    color: var(--rb-text-color-primary);
+    font-size: 26rpx;
+    border-radius: 50%;
+    box-sizing: border-box;
+  }
+
+  &__day--muted {
+    color: var(--rb-text-color-placeholder);
+  }
+
+  &__day--selected {
+    background: var(--rb-color-primary);
+    color: var(--rb-color-white);
+    font-weight: 600;
+  }
+
+  &__time-title {
+    display: block;
+    margin-bottom: 12rpx;
+    color: var(--rb-text-color-regular);
+    font-size: 26rpx;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  &__picker {
+    flex: 1;
+    min-height: 360rpx;
+    height: 360rpx;
+    max-height: 360rpx;
+    overflow: hidden;
+    background: #fafbfc;
+    border-radius: 12rpx;
+  }
+
+  &__picker-item {
+    @include rb-flex-center;
+    width: 100%;
+    height: 72rpx;
+    color: var(--rb-text-color-primary);
+    font-size: 30rpx;
+    box-sizing: border-box;
+  }
+
+  &__summary {
+    margin-top: 20rpx;
+    padding: 16rpx 12rpx;
+    color: var(--rb-text-color-regular);
+    font-size: 24rpx;
+    text-align: center;
+    background: #f5f7fa;
+    border-radius: 10rpx;
+  }
+
+  &__footer {
+    @include rb-flex;
+    gap: 20rpx;
+    margin-top: 24rpx;
+  }
+
+  &__btn {
+    @include rb-flex-center;
+    flex: 1;
+    height: 80rpx;
+    border-radius: 12rpx;
+    font-size: 28rpx;
+    font-weight: 600;
+  }
+
+  &__btn--cancel {
+    background: #f2f3f5;
+    color: var(--rb-text-color-regular);
+  }
+
+  &__btn--confirm {
+    background: var(--rb-color-primary);
+    color: var(--rb-color-white);
+  }
+}
+
+/* 日历头在面板内略紧凑 */
+.rb-datetime-panel .rb-calendar-header {
+  padding: 8rpx 8rpx 12rpx;
+
+  &__title {
+    font-size: 28rpx;
+  }
+
+  &__arrow {
+    width: 48rpx;
+    height: 48rpx;
+    font-size: 36rpx;
+  }
+}

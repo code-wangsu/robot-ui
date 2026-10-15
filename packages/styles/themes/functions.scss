@@ -1,0 +1,23 @@
+@use 'sass:color';
+
+// 主题色工具函数
+
+/// 与白色混合生成浅色（level: 1-9，越大越浅）
+@function rb-mix-light($color, $level: 8) {
+  @return color.mix(#ffffff, $color, $level * 10%);
+}
+
+/// 与黑色混合生成深色（level: 1-9）
+@function rb-mix-dark($color, $level: 2) {
+  @return color.mix(#000000, $color, $level * 10%);
+}
+
+/// 根据主色生成一套语义色衍生值
+@function rb-build-tone($base) {
+  @return (
+    base: $base,
+    dark: rb-mix-dark($base, 2),
+    light: rb-mix-light($base, 9),
+    disabled: rb-mix-light($base, 5)
+  );
+}

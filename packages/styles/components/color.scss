@@ -1,0 +1,51 @@
+.rb-color {
+  display: inline-flex;
+  flex-direction: column;
+  width: 200rpx;
+  overflow: hidden;
+  border-radius: 12rpx;
+  border: 1rpx solid var(--rb-border-color);
+  background: var(--rb-color-white);
+  box-sizing: border-box;
+
+  &--small {
+    width: 160rpx;
+
+    .rb-color__swatch {
+      height: 80rpx;
+    }
+  }
+
+  &--large {
+    width: 240rpx;
+
+    .rb-color__swatch {
+      height: 140rpx;
+    }
+  }
+
+  &__swatch {
+    width: 100%;
+    height: 110rpx;
+  }
+
+  &__meta {
+    padding: 12rpx 16rpx 16rpx;
+  }
+
+  &__label {
+    display: block;
+    color: var(--rb-text-color-primary);
+    font-size: 24rpx;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  &__value {
+    display: block;
+    margin-top: 4rpx;
+    color: var(--rb-text-color-secondary);
+    font-size: 22rpx;
+    line-height: 1.4;
+  }
+}

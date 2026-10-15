@@ -1,0 +1,55 @@
+.rb-video {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  background: #000;
+  border-radius: $rb-radius-md;
+  /* 独立层叠上下文，避免原生 video 把兄弟节点顶上去 */
+  isolation: isolate;
+  transform: translateZ(0);
+
+  &__player {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  &__cover {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    @include rb-flex-center;
+  }
+
+  &__poster {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+
+    &--empty {
+      background: #1a1a1a;
+    }
+  }
+
+  &__play {
+    position: relative;
+    z-index: 2;
+    width: 96rpx;
+    height: 96rpx;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.45);
+    @include rb-flex-center;
+  }
+
+  &__play-icon {
+    width: 0;
+    height: 0;
+    margin-left: 8rpx;
+    border-style: solid;
+    border-width: 18rpx 0 18rpx 28rpx;
+    border-color: transparent transparent transparent #fff;
+  }
+}

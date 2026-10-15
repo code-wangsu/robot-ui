@@ -1,0 +1,25 @@
+.rb-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-style: normal;
+  line-height: 1;
+  vertical-align: middle;
+
+  &--spin {
+    animation: rb-icon-spin 1s linear infinite;
+  }
+
+  &--unknown {
+    opacity: 0.45;
+  }
+}
+
+@keyframes rb-icon-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

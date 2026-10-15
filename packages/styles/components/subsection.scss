@@ -1,0 +1,48 @@
+.rb-subsection {
+  padding: 4rpx;
+  border-radius: $rb-radius-md;
+  background: var(--rb-bg-color);
+  box-sizing: border-box;
+
+  &__track {
+    @include rb-flex;
+    position: relative;
+    align-items: stretch;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__slider {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    border-radius: $rb-radius-sm;
+    background: var(--rb-color-white);
+    box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.06);
+    transition-property: left;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+  }
+
+  &__item {
+    @include rb-flex-center;
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    height: 100%;
+    font-size: $rb-font-sm;
+    color: var(--rb-text-color-regular);
+  }
+
+  &__text {
+    transition: color 0.2s ease;
+  }
+
+  &__item--active &__text,
+  &__item--active {
+    color: var(--rb-color-primary);
+    font-weight: 600;
+  }
+}

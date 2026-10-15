@@ -1,0 +1,12 @@
+.rb-code {
+  color: var(--rb-color-primary);
+  font-size: $rb-font-md;
+
+  &--active {
+    color: var(--rb-color-primary);
+  }
+
+  &--disabled {
+    color: var(--rb-disabled-color);
+  }
+}

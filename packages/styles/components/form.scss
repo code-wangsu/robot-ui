@@ -1,0 +1,9 @@
+.rb-form {
+  &--label-left .rb-form-item {
+    flex-direction: row;
+  }
+
+  &--label-top .rb-form-item {
+    flex-direction: column;
+  }
+}

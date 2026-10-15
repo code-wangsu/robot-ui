@@ -1,0 +1,13 @@
+.rb-back-top {
+  @include rb-flex-center;
+  position: fixed;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.45);
+  color: var(--rb-color-white);
+
+  &__icon {
+    font-size: 36rpx;
+  }
+}

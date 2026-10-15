@@ -1,0 +1,23 @@
+.rb-notice-bar {
+  @include rb-flex;
+  align-items: center;
+  height: 64rpx;
+  padding: 0 24rpx;
+  background: var(--rb-color-warning-light);
+  color: var(--rb-color-warning-dark);
+  font-size: $rb-font-sm;
+
+  &__wrap {
+    flex: 1;
+    overflow: hidden;
+  }
+
+  &__text {
+    white-space: nowrap;
+  }
+
+  &__close {
+    margin-left: 16rpx;
+    font-size: 32rpx;
+  }
+}

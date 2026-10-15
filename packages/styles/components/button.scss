@@ -1,0 +1,113 @@
+.rb-button {
+  @include rb-flex-center;
+  position: relative;
+  box-sizing: border-box;
+  padding: 0 32rpx;
+  height: 80rpx;
+  border-radius: $rb-radius-md;
+  font-size: $rb-font-md;
+  line-height: 1;
+  border: 1px solid transparent;
+  overflow: hidden;
+
+  /* 对齐 Element Plus：default ≈ medium */
+  &--mini {
+    height: 48rpx;
+    padding: 0 16rpx;
+    font-size: 22rpx;
+    border-radius: 8rpx;
+  }
+
+  &--small {
+    height: 56rpx;
+    padding: 0 20rpx;
+    font-size: 24rpx;
+    border-radius: 10rpx;
+  }
+
+  &--large {
+    height: 96rpx;
+    padding: 0 40rpx;
+    font-size: $rb-font-lg;
+  }
+
+  &--block {
+    width: 100%;
+  }
+
+  &--round {
+    border-radius: 999rpx;
+  }
+
+  &--disabled {
+    opacity: 0.55;
+  }
+
+  &--primary {
+    color: var(--rb-color-white);
+    background: var(--rb-color-primary);
+    border-color: var(--rb-color-primary);
+  }
+
+  &--success {
+    color: var(--rb-color-white);
+    background: var(--rb-color-success);
+    border-color: var(--rb-color-success);
+  }
+
+  &--warning {
+    color: var(--rb-color-white);
+    background: var(--rb-color-warning);
+    border-color: var(--rb-color-warning);
+  }
+
+  &--error {
+    color: var(--rb-color-white);
+    background: var(--rb-color-error);
+    border-color: var(--rb-color-error);
+  }
+
+  &--info {
+    color: var(--rb-color-white);
+    background: var(--rb-color-info);
+    border-color: var(--rb-color-info);
+  }
+
+  &--plain {
+    background: transparent;
+  }
+
+  &--plain.rb-button--primary {
+    color: var(--rb-color-primary);
+    background: var(--rb-color-primary-light);
+  }
+
+  &--plain.rb-button--success {
+    color: var(--rb-color-success);
+    background: var(--rb-color-success-light);
+  }
+
+  &--plain.rb-button--warning {
+    color: var(--rb-color-warning);
+    background: var(--rb-color-warning-light);
+  }
+
+  &--plain.rb-button--error {
+    color: var(--rb-color-error);
+    background: var(--rb-color-error-light);
+  }
+
+  &--plain.rb-button--info {
+    color: var(--rb-color-info);
+    background: var(--rb-color-info-light);
+  }
+
+  &__text {
+    margin-left: 0;
+  }
+
+  .rb-loading + &__text,
+  .rb-loading ~ &__text {
+    margin-left: 8rpx;
+  }
+}

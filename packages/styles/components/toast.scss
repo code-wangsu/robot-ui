@@ -1,0 +1,185 @@
+.rb-toast {
+  position: fixed;
+  z-index: $rb-z-index-toast;
+  pointer-events: none;
+  box-sizing: border-box;
+
+  &--top-right {
+    top: calc(24rpx + env(safe-area-inset-top));
+    right: 24rpx;
+    left: auto;
+  }
+
+  &--top-left {
+    top: calc(24rpx + env(safe-area-inset-top));
+    left: 24rpx;
+    right: auto;
+  }
+
+  &--bottom-right {
+    bottom: calc(24rpx + env(safe-area-inset-bottom));
+    right: 24rpx;
+    left: auto;
+  }
+
+  &--top {
+    top: calc(24rpx + env(safe-area-inset-top));
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &--bottom {
+    bottom: calc(48rpx + env(safe-area-inset-bottom));
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &--center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__panel {
+    @include rb-flex;
+    align-items: flex-start;
+    gap: 20rpx;
+    width: 620rpx;
+    max-width: 86vw;
+    padding: 28rpx 24rpx;
+    border-radius: 12rpx;
+    background: var(--rb-color-white);
+    box-shadow:
+      0 4rpx 12rpx rgba(0, 0, 0, 0.08),
+      0 0 2rpx rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    pointer-events: auto;
+    box-sizing: border-box;
+  }
+
+  &__icon {
+    @include rb-flex-center;
+    flex-shrink: 0;
+    width: 44rpx;
+    height: 44rpx;
+    margin-top: 2rpx;
+    border-radius: 50%;
+    color: var(--rb-color-white);
+    font-size: 24rpx;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  &__icon--info,
+  &__icon--default {
+    background: var(--rb-color-primary);
+  }
+
+  &__icon--success {
+    background: var(--rb-color-success);
+  }
+
+  &__icon--warning {
+    background: var(--rb-color-warning);
+  }
+
+  &__icon--error {
+    background: var(--rb-color-error);
+  }
+
+  &__icon--loading {
+    background: transparent;
+  }
+
+  &__icon-text {
+    color: var(--rb-color-white);
+    font-size: 24rpx;
+    line-height: 1;
+  }
+
+  &__spinner {
+    width: 36rpx;
+    height: 36rpx;
+    border: 4rpx solid var(--rb-color-primary-light);
+    border-top-color: var(--rb-color-primary);
+    border-radius: 50%;
+    animation: rb-toast-spin 0.8s linear infinite;
+  }
+
+  &__body {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8rpx;
+  }
+
+  &__title {
+    color: var(--rb-text-color-primary);
+    font-size: 28rpx;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  &__message {
+    color: var(--rb-text-color-regular);
+    font-size: 26rpx;
+    line-height: 1.5;
+    word-break: break-all;
+  }
+
+  &__close {
+    @include rb-flex-center;
+    flex-shrink: 0;
+    width: 40rpx;
+    height: 40rpx;
+    margin-top: -4rpx;
+    margin-right: -4rpx;
+  }
+
+  &__close-text {
+    color: var(--rb-text-color-secondary);
+    font-size: 36rpx;
+    line-height: 1;
+  }
+
+  /* 类型色条：贴左侧，对齐 Element Plus Notification 气质 */
+  &__panel--success {
+    border-left: 6rpx solid var(--rb-color-success);
+  }
+
+  &__panel--warning {
+    border-left: 6rpx solid var(--rb-color-warning);
+  }
+
+  &__panel--error {
+    border-left: 6rpx solid var(--rb-color-error);
+  }
+
+  &__panel--info,
+  &__panel--default {
+    border-left: 6rpx solid var(--rb-color-primary);
+  }
+
+  &__panel--loading {
+    border-left: 6rpx solid var(--rb-color-primary);
+  }
+
+  /* 右侧滑入时附带淡入，更接近 Element Plus Notification */
+  .rb-transition--slide-left {
+    opacity: 0;
+
+    &.rb-transition--show {
+      opacity: 1;
+    }
+  }
+}
+
+@keyframes rb-toast-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

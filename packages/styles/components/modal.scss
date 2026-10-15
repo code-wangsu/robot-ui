@@ -1,0 +1,30 @@
+.rb-modal {
+  width: 600rpx;
+  padding: 40rpx 32rpx 24rpx;
+  box-sizing: border-box;
+
+  &__title {
+    text-align: center;
+    font-size: $rb-font-lg;
+    color: var(--rb-text-color-primary);
+    font-weight: 600;
+  }
+
+  &__content {
+    margin-top: 24rpx;
+    text-align: center;
+    font-size: $rb-font-md;
+    color: var(--rb-text-color-regular);
+    line-height: 1.6;
+  }
+
+  &__footer {
+    @include rb-flex;
+    margin-top: 32rpx;
+    gap: 16rpx;
+  }
+
+  &__btn {
+    flex: 1;
+  }
+}

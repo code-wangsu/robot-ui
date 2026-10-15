@@ -1,0 +1,40 @@
+.rb-radio-group {
+  @include rb-flex;
+  flex-wrap: wrap;
+  gap: 24rpx;
+}
+
+.rb-radio {
+  @include rb-flex;
+  align-items: center;
+
+  &__icon {
+    @include rb-flex-center;
+    width: 36rpx;
+    height: 36rpx;
+    border: 1px solid var(--rb-border-color);
+    border-radius: 50%;
+    background: var(--rb-color-white);
+  }
+
+  &--checked &__icon {
+    border-color: var(--rb-color-primary);
+  }
+
+  &__dot {
+    width: 20rpx;
+    height: 20rpx;
+    border-radius: 50%;
+    background: var(--rb-color-primary);
+  }
+
+  &__label {
+    margin-left: 12rpx;
+    color: var(--rb-text-color-primary);
+    font-size: $rb-font-md;
+  }
+
+  &--disabled {
+    opacity: 0.5;
+  }
+}

@@ -1,0 +1,41 @@
+.rb-code-input {
+  position: relative;
+
+  &__cells {
+    @include rb-flex;
+    justify-content: center;
+  }
+
+  &__cell {
+    @include rb-flex-center;
+    width: 80rpx;
+    height: 88rpx;
+    border: 1px solid var(--rb-border-color);
+    border-radius: $rb-radius-sm;
+    background: var(--rb-color-white);
+    color: var(--rb-text-color-primary);
+
+    &--active {
+      border-color: var(--rb-color-primary);
+    }
+  }
+
+  &--line &__cell {
+    border: none;
+    border-bottom: 2px solid var(--rb-border-color);
+    border-radius: 0;
+  }
+
+  &__dot {
+    width: 16rpx;
+    height: 16rpx;
+    border-radius: 50%;
+    background: var(--rb-text-color-primary);
+  }
+
+  &__hidden {
+    position: absolute;
+    left: -9999rpx;
+    opacity: 0;
+  }
+}

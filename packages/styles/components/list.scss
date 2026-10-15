@@ -1,0 +1,44 @@
+.rb-list {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.rb-list-item {
+  @include rb-flex;
+  align-items: center;
+  box-sizing: border-box;
+  background: var(--rb-color-white);
+  @include rb-hairline-bottom;
+
+  &--disabled {
+    opacity: 0.5;
+  }
+
+  &__main {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__title {
+    font-size: $rb-font-md;
+    color: var(--rb-text-color-primary);
+  }
+
+  &__note {
+    display: block;
+    margin-top: 8rpx;
+    font-size: $rb-font-sm;
+    color: var(--rb-text-color-secondary);
+  }
+
+  &__extra {
+    margin-left: 16rpx;
+    color: var(--rb-text-color-regular);
+  }
+
+  &__arrow {
+    margin-left: 8rpx;
+    font-size: 36rpx;
+    color: var(--rb-text-color-placeholder);
+  }
+}

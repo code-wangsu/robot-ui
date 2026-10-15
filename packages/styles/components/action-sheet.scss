@@ -1,0 +1,47 @@
+.rb-action-sheet {
+  background: var(--rb-color-white);
+
+  &__title {
+    padding: 24rpx 32rpx;
+    text-align: center;
+    font-size: $rb-font-sm;
+    color: var(--rb-text-color-secondary);
+    @include rb-hairline-bottom;
+  }
+
+  &__item {
+    padding: 28rpx 32rpx;
+    text-align: center;
+    @include rb-hairline-bottom;
+
+    &--disabled {
+      opacity: 0.5;
+    }
+  }
+
+  &__name {
+    font-size: $rb-font-md;
+    color: var(--rb-text-color-primary);
+  }
+
+  &__subname {
+    display: block;
+    margin-top: 8rpx;
+    font-size: $rb-font-sm;
+    color: var(--rb-text-color-secondary);
+  }
+
+  &__gap {
+    height: 16rpx;
+    background: var(--rb-bg-color);
+  }
+
+  &__cancel {
+    padding: 28rpx 32rpx;
+    text-align: center;
+    font-size: $rb-font-md;
+    color: var(--rb-text-color-primary);
+    padding-bottom: calc(28rpx + constant(safe-area-inset-bottom));
+    padding-bottom: calc(28rpx + env(safe-area-inset-bottom));
+  }
+}

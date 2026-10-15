@@ -1,0 +1,39 @@
+.rb-picker {
+  background: var(--rb-color-white);
+
+  &__toolbar {
+    @include rb-flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 88rpx;
+    padding: 0 32rpx;
+    @include rb-hairline-bottom;
+  }
+
+  &__title {
+    color: var(--rb-text-color-primary);
+    font-size: $rb-font-md;
+    font-weight: 600;
+  }
+
+  &__cancel {
+    color: var(--rb-text-color-secondary);
+    font-size: $rb-font-md;
+  }
+
+  &__confirm {
+    color: var(--rb-color-primary);
+    font-size: $rb-font-md;
+  }
+
+  &__view {
+    height: 440rpx;
+  }
+
+  &__item {
+    @include rb-flex-center;
+    height: 88rpx;
+    font-size: $rb-font-md;
+    color: var(--rb-text-color-primary);
+  }
+}

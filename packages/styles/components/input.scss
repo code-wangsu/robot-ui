@@ -1,0 +1,48 @@
+.rb-input {
+  @include rb-flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 24rpx;
+  background: var(--rb-color-white);
+
+  &--surround {
+    border: 1px solid var(--rb-border-color);
+    border-radius: $rb-radius-md;
+  }
+
+  &--bottom {
+    border-bottom: 1px solid var(--rb-border-color);
+    border-radius: 0;
+  }
+
+  &--none {
+    border: none;
+  }
+
+  &--focus.rb-input--surround {
+    border-color: var(--rb-color-primary);
+  }
+
+  &--disabled {
+    opacity: 0.6;
+    background: var(--rb-bg-color);
+  }
+
+  &__inner {
+    flex: 1;
+    min-width: 0;
+    color: var(--rb-text-color-primary);
+  }
+
+  &__prefix,
+  &__suffix {
+    @include rb-flex-center;
+  }
+
+  &__clear {
+    margin-left: 12rpx;
+    color: var(--rb-text-color-placeholder);
+    font-size: 36rpx;
+    line-height: 1;
+  }
+}

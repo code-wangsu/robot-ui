@@ -1,0 +1,41 @@
+.rb-link {
+  display: inline;
+  font-size: $rb-font-md;
+  line-height: 1.5;
+
+  &--default {
+    color: var(--rb-text-color-primary);
+  }
+
+  &--primary {
+    color: var(--rb-color-primary);
+  }
+
+  &--success {
+    color: var(--rb-color-success);
+  }
+
+  &--warning {
+    color: var(--rb-color-warning);
+  }
+
+  &--error {
+    color: var(--rb-color-error);
+  }
+
+  &--info {
+    color: var(--rb-color-info);
+  }
+
+  &--underline {
+    text-decoration: underline;
+  }
+
+  &--disabled {
+    opacity: 0.5;
+  }
+
+  &__icon {
+    margin-right: 6rpx;
+  }
+}

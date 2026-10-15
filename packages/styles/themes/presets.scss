@@ -1,0 +1,60 @@
+@use 'sass:map';
+@import './palettes.scss';
+
+// 默哀白：弱化彩色辅助色
+$rb-mourning-success: #a3b18a !default;
+$rb-mourning-warning: #b5a48a !default;
+$rb-mourning-error: #b0a0a0 !default;
+$rb-mourning-info: #9a9a9a !default;
+
+@mixin rb-theme-preset($key) {
+  $meta: map.get($rb-theme-presets, $key);
+  @if $meta == null {
+    @warn '[robot-ui] unknown theme: #{$key}';
+  } @else {
+    $primary: map.get($meta, primary);
+
+    @if $key == 'mourning-white' {
+      @include rb-emit-base-vars(
+        $main: #4a4a4a,
+        $content: #6e6e6e,
+        $tips: #8c8c8c,
+        $light: #bfbfbf,
+        $border: #d9d9d9,
+        $bg: #f5f5f5,
+        $disabled: #c0c0c0,
+        $white: #ffffff
+      );
+      @include rb-emit-color-vars(
+        $primary,
+        $rb-mourning-success,
+        $rb-mourning-warning,
+        $rb-mourning-error,
+        $rb-mourning-info
+      );
+    } @else {
+      @include rb-emit-base-vars();
+      @include rb-emit-color-vars($primary);
+    }
+  }
+}
+
+/// 输出 :root / page 默认主题 + 各 data-rb-theme 预设
+@mixin rb-generate-theme-css() {
+  $default-meta: map.get($rb-theme-presets, $rb-default-theme);
+  $default-primary: map.get($default-meta, primary);
+
+  :root,
+  page,
+  uni-page-body {
+    @include rb-emit-base-vars();
+    @include rb-emit-color-vars($default-primary);
+  }
+
+  @each $key, $meta in $rb-theme-presets {
+    [data-rb-theme='#{$key}'],
+    .rb-theme-#{$key} {
+      @include rb-theme-preset($key);
+    }
+  }
+}
